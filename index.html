@@ -2,57 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New here mate?</title>
+  <title>HELLO THERE!</title>
   <style>
-    body {
-      font-family: sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      color: #333;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
-    header {
-      background: #333;
+
+    body {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                  url('https://images.unsplash.com/photo-1569004249220-16e9f5a42b1e') no-repeat center center/cover;
+      height: 100vh;
       color: white;
-      padding: 2rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    header {
+      background-color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #333;
+      font-size: 24px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #555;
+    }
+
+    .main-content {
       text-align: center;
+      padding-top: 100px;
     }
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+
+    .main-content h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
     }
-    h1, h2 {
-      margin-top: 0;
+
+    .main-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #eee;
+
+    .buttons a {
+      text-decoration: none;
+      color: white;
+      background-color: #007bff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Aayush knows you or not?</h1>
-    <p>I'm nothing just a normal guy. Am I?</p>
+    <h1>Aayush</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <main>
-    <h2>About Me</h2>
-    <p>You prolly know much about me. Should I really introduce myself? Or just dm me man..</p>
 
-    <h2>Projects</h2>
-    <ul>
-      <li>I haven't done anything yet.</li>
-      <li>I'm still learning python..</li>
-    </ul>
-
-    <h2>Contact: I can't do that</h2>
-    <p>Email: ican'tshareit@gmail.com</p>
-  </main>
-  <footer>
-    &copy; 2025 KISS YOUR ASS
-  </footer>
+  <div class="main-content">
+    <h2>Welcome to My World</h2>
+    <p>I'm a student exploring the web. This is my personal site.</p>
+    <div class="buttons">
+      <a href="#about">About Me</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </body>
 </html>
