@@ -1,100 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aayush's Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello visitor!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXOU2C1j6aPqU1KbO6zG+IdF4OvT4eMGESzSzr+y5HkS4T5SxwHo6E5wMvN1EkncfEMuUpUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
+    * {margin:0;padding:0;box-sizing:border-box;}
     body {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                  url('https://images.unsplash.com/photo-1569004249220-16e9f5a42b1e') no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      animation: fadeIn 1.5s ease-in;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #1b1c1d;
+      scroll-behavior: smooth;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
     header {
       background-color: white;
-      padding: 15px 30px;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
     }
-
-    header h1 {
-      color: #333;
-      font-size: 24px;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
+    .logo {
+      font-size: 1.2rem;
       font-weight: bold;
+      color: black;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typingLogo 2s steps(20, end) forwards;
+      border-right: 2px solid black;
+    }
+    @keyframes typingLogo {
+      from { width: 0; }
+      to { width: 120px; }
+    }
+    .logo span.small {
+      font-size: 0.6rem;
+      color: #333;
+      margin-left: 0.3rem;
+    }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
       transition: color 0.3s ease;
     }
-
     nav a:hover {
-      color: #555;
+      color: #666;
     }
-
-    .main-content {
+    section {
+      min-height: 100vh;
+      padding: 2rem;
       text-align: center;
-      padding-top: 100px;
     }
-
-    .main-content h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
+    .home {
+      background: url('https://images.wallpaperscraft.com/image/single/sea_horizon_sky_117095_1920x1080.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #f6a045;
+      text-shadow: 0 0 10px #444;
     }
-
-    .main-content p {
-      font-size: 20px;
-      margin-bottom: 30px;
+    .home h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
-
-    .buttons a {
-      text-decoration: none;
+    .home p {
+      font-size: 1.5rem;
+      animation: fadeInLetters 2.5s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInLetters {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .about {
+      position: relative;
       color: white;
-      background-color: #007bff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      margin: 0 10px;
-      transition: background-color 0.3s;
+      text-align: center;
+      overflow: hidden;
     }
-
-    .buttons a:hover {
-      background-color: #0056b3;
+    .about video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .about article p {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 20px #444;
+    }
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .scroll-fade.reveal {
+      opacity: 1;
+      transform: none;
+    }
+    .scroll-fade.hide {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .description {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      color: #ccc;
+    }
+    .contact {
+      background: url('https://i.pinimg.com/736x/66/a5/68/66a5685c743e93c4f62892085dd3680e.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
+    }
+    .typewriter-contact {
+      font-weight: bold;
+      font-size: 1.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      border-right: 2px solid white;
+      animation: typingContact 2s steps(30, end) forwards;
+      margin: 0 auto 1rem;
+      text-align: center;
+    }
+    @keyframes typingContact {
+      from { width: 0; }
+      to { width: 200px; }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
+      margin: 2rem auto;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    input, textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #666;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      color: #ccc;
+      font-weight: 300;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #888;
+    }
+    button {
+      padding: 0.75rem 2rem;
+      background-color: white;
+      border: none;
+      color: black;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+    .confirmation {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 1.2rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+    }
+    .confirmation.show {
+      display: flex;
+    }
+    .confirmation button {
+      margin-top: 1rem;
+      background: white;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Aayush</h1>
+    <div class="logo">आयुष <span class="small">Āyusa</span></div>
     <nav>
       <a href="#about">About Me</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="main-content">
-    <h2>Welcome to My World</h2>
-    <p>I'm a student exploring the web. This is my personal site.</p>
-    <div class="buttons">
-      <a href="#about">About Me</a>
-      <a href="#contact">Contact</a>
+  <section class="home" id="home">
+    <div>
+      <h1>Jai Shree Ram!</h1>
+      <p>जहाँ भगवान राममा आस्था छ, त्यहाँ शक्ति र बुद्धि छ। त्यहाँ कुनै डर हुन्न।</p>
     </div>
+  </section>
+
+  <section class="about" id="about">
+    <video autoplay muted loop>
+      <source src="https://drive.google.com/uc?export=download&id=1Fg3OKAfz_T78wke0n5lUBDoemWhf76RP" type="video/mp4">
+    </video>
+    <article>
+      <p class="scroll-fade">Hey visitor!</p>
+    </article>
+    <p class="description scroll-fade">
+      I'm Aayush. I'm a student. I love traveling and exploring. I also love videography and taking pictures, even though I have a shit camera. You can contact me if you wish to. We can possibly argue on why Hinduism is the absolute truth. Or maybe on anything else? I love learning new things that seem valuable to me. But mostly, I'm interested in videography and photography. I capture almost everything I see. I find it really fun. Apart from that, I love telling stories and sharing the content I create.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="typewriter-contact">Feel free to contact</div>
+    <form id="contactForm">
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <div class="confirmation" id="confirmation">
+    <p>Your email and message have been successfully shared.</p>
+    <button onclick="closeConfirmation()">Okay</button>
   </div>
+
+  <script>
+    const fadeElements = document.querySelectorAll('.scroll-fade');
+    window.addEventListener('scroll', () => {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
+          el.classList.add('reveal');
+          el.classList.remove('hide');
+        } else {
+          el.classList.remove('reveal');
+          el.classList.add('hide');
+        }
+      });
+    });
+
+    setTimeout(() => {
+      document.querySelector('.logo').style.borderRight = 'none';
+      document.querySelector('.typewriter-contact').style.borderRight = 'none';
+    }, 3000);
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('confirmation').classList.add('show');
+    });
+
+    function closeConfirmation() {
+      document.getElementById('confirmation').classList.remove('show');
+    }
+  </script>
 </body>
 </html>
